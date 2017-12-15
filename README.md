@@ -25,5 +25,3 @@ npm run dev
 ```js
 npm run build
 ```
-
-[作者博客](http://vueadmin.com)
