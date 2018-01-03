@@ -15,6 +15,7 @@
     "parcel-plugin-vue": "^1.0.1"
   },
   "dependencies": {
+    "axios": "^0.17.1",
     "echarts": "^3.8.5",
     "vue-router": "^3.0.1"
   }

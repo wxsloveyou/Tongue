@@ -5,25 +5,26 @@
         :data="tableData"
         style="width: 100%">
         <el-table-column
-          prop="code"
+          prop="poi_id"
           label="编号">
         </el-table-column>
         <el-table-column
-          prop="shop_name"
+          prop="business_name"
           width="320"
-          label="忍村">
-        </el-table-column>
-        <el-table-column
-          prop="area"
-          label="位面">
+          label="门店名称">
         </el-table-column>
         <el-table-column
           prop="province"
-          label="国家">
+          label="省份">
         </el-table-column>
         <el-table-column
           prop="city"
-          label="村子">
+          label="城市">
+        </el-table-column>
+        <el-table-column
+          prop="address"
+          width="320"
+          label="地址">
         </el-table-column>
         <el-table-column
           label="操作">
@@ -48,14 +49,19 @@
   export default {
     data() {
       return {
-        tableData: [{
-          code: '1',
-          shop_name: '木叶忍者村',
-          area: '火影位面',
-          province: '大陆',
-          city: '火之国'
-        }]
+        tableData: []
       }
+    },
+    mounted() {
+      axios
+        .get("http://wechat.run/business/list")
+        .then(response => {
+          console.log(response.data);
+          this.tableData = response.data;
+        })
+        .catch(error => {
+          console.log(error);
+        });
     },
     methods: {
       formatter(row, column) {

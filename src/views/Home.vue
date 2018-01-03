@@ -48,6 +48,24 @@
                 <el-menu-item index="/shop/staff">店员管理</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
+            <el-submenu index="beacon">
+              <template slot="title">设备管理</template>
+              <el-menu-item-group>
+                <el-menu-item index="/beacon/list">设备列表</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="page">
+              <template slot="title">页面管理</template>
+              <el-menu-item-group>
+                <el-menu-item index="/page/list">页面列表</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
+            <el-submenu index="resource">
+              <template slot="title">资源管理</template>
+              <el-menu-item-group>
+                <el-menu-item index="/resource/list">资源列表</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
             <el-submenu index="system">
               <template slot="title">系统管理</template>
               <el-menu-item-group>

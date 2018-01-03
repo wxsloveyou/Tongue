@@ -7,6 +7,9 @@ import Main from './views/Main'
 import Website from './views/Website'
 import Person from './views/Person'
 import Shop from './views/Shop'
+import Beacon from './views/Beacon'
+import Page from './views/Page'
+import Resource from './views/Resource'
 
 import Portrait from './views/chart/portrait'
 import Effective from './views/chart/effective'
@@ -29,17 +32,21 @@ import PersonStaff from './views/person/staff'
 import Manager from './views/shop/manager'
 import ShopStaff from './views/shop/staff'
 
+import BeaconList from './views/beacon/list'
+
+import PageList from './views/page/list'
+
+import ResourceList from './views/resource/list'
+
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: '登录',
     component: Login,
   },
   {
     path: '/login',
-    name: '登录',
     component: Login,
   },
   {
@@ -143,7 +150,7 @@ const routes = [
       }, {
         path: '/shop',
         component: Shop,
-        name: '门店管理',
+        name: '经销商管理',
         children: [
           {
             path: '/shop/manager',
@@ -153,6 +160,39 @@ const routes = [
             path: '/shop/staff',
             name: '店员管理',
             component: ShopStaff
+          }
+        ]
+      }, {
+        path: '/beacon',
+        component: Beacon,
+        name: '设备管理',
+        children: [
+          {
+            path: '/beacon/list',
+            name: '设备列表',
+            component: BeaconList
+          }
+        ]
+      }, {
+        path: '/page',
+        component: Page,
+        name: '页面管理',
+        children: [
+          {
+            path: '/page/list',
+            name: '页面列表',
+            component: PageList
+          }
+        ]
+      }, {
+        path: '/resource',
+        component: Resource,
+        name: '资源管理',
+        children: [
+          {
+            path: '/resource/list',
+            name: '资源列表',
+            component: ResourceList
           }
         ]
       }
